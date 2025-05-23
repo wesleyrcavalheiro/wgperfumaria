@@ -51,6 +51,19 @@
       color: #333;
       text-align: justify;
     }
+    .whatsapp-button {
+      margin-top: 40px;
+    }
+    .whatsapp-button a {
+      text-decoration: none;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: bold;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
@@ -67,6 +80,10 @@
   <textarea id="input" placeholder="Digite aqui seus perfumes favoritos ou preferências de aroma..."></textarea><br>
   <button onclick="enviar()">Descobrir</button>
   <div id="resposta"></div>
+
+  <div class="whatsapp-button">
+    <a href="https://wa.me/message/5J4XH24A3ISJE1" target="_blank">📦 Faça seu Pedido Agora pelo WhatsApp</a>
+  </div>
 
   <script>
     async function enviar() {
