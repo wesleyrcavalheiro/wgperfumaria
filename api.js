@@ -1,4 +1,3 @@
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -9,7 +8,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_KEY });
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_KEY,
+});
 
 const perfumes = `Versace Dylan Turquoise
 Vanilla – Victoria's Secret
@@ -142,11 +143,10 @@ app.post("/api/perfume", async (req, res) => {
       messages: [
         {
           role: "system",
-          content: `Você é um especialista em perfumes. Recomende apenas 1 perfume com base no gosto do cliente, escolhendo exclusivamente da lista abaixo. Nunca invente perfumes que não estejam nela.
+          content: `Você é um especialista em perfumes. Sempre recomende apenas um perfume com base nos gostos do cliente, escolhendo exclusivamente da lista abaixo. Nunca recomende nada fora dessa lista. Seja direto, objetivo e diga apenas o nome do perfume ideal.
 
 Lista de perfumes permitidos:
-${perfumes}
-`
+${perfumes}`
         },
         { role: "user", content: mensagem }
       ],
