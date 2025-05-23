@@ -10,6 +10,17 @@
       text-align: center;
       padding: 40px;
     }
+    .instrucoes {
+      max-width: 500px;
+      margin: 0 auto 20px auto;
+      font-size: 16px;
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      border: 1px solid #ffeeba;
+      border-radius: 8px;
+      text-align: left;
+    }
     textarea {
       width: 90%;
       max-width: 400px;
@@ -43,7 +54,16 @@
 </head>
 <body>
   <h1>Qual perfume combina com você?</h1>
-  <textarea id="input" placeholder="Descreva os perfumes que você gosta ou os tipos de fragrância..."></textarea><br>
+
+  <div class="instrucoes">
+    <strong>Diga à IA quais perfumes você já gosta!</strong><br>
+    A partir dessas referências, ela vai sugerir perfumes parecidos e ideais para você.<br><br>
+    Você também pode falar sobre o tipo de aroma que prefere — como doce, amadeirado, cítrico, floral, marcante ou suave.<br><br>
+    ✨ <em>Importante:</em> mencione se está procurando um perfume <strong>feminino</strong>, <strong>masculino</strong> ou <strong>unissex</strong>.<br><br>
+    Com base nas suas preferências, a IA vai sugerir até <strong>3 perfumes da nossa lista exclusiva</strong>, com uma breve descrição do estilo de cada um.
+  </div>
+
+  <textarea id="input" placeholder="Digite aqui seus perfumes favoritos ou preferências de aroma..."></textarea><br>
   <button onclick="enviar()">Descobrir</button>
   <div id="resposta"></div>
 
