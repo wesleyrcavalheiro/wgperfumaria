@@ -80,7 +80,7 @@
           body: JSON.stringify({ mensagem: entrada })
         });
         const data = await r.json();
-        resposta.innerText = data.resposta || "Não foi possível obter uma resposta.";
+        resposta.innerHTML = (data.resposta || "Não foi possível obter uma resposta.").replace(/\\*\\*(.*?)\\*\\*/g, "<strong>$1</strong>");
       } catch (error) {
         resposta.innerText = "Erro ao se comunicar com a IA.";
         console.error(error);
