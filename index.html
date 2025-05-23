@@ -46,9 +46,10 @@
       margin-top: 20px;
       font-size: 18px;
       white-space: pre-wrap;
-      max-width: 500px;
-      margin: 0 auto;
+      max-width: 700px;
+      margin: 20px auto;
       color: #333;
+      text-align: justify;
     }
   </style>
 </head>
@@ -80,7 +81,7 @@
           body: JSON.stringify({ mensagem: entrada })
         });
         const data = await r.json();
-        resposta.innerHTML = (data.resposta || "Não foi possível obter uma resposta.").replace(/\\*\\*(.*?)\\*\\*/g, "<strong>$1</strong>");
+        resposta.innerHTML = (data.resposta || "Não foi possível obter uma resposta.").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
       } catch (error) {
         resposta.innerText = "Erro ao se comunicar com a IA.";
         console.error(error);
